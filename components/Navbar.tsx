@@ -1,7 +1,9 @@
 import React from 'react'
 import { ModeToggle } from './ModeToggle'
 
-export default function Navbar() {
+
+export default async function Navbar() {
+  
   return (
     <nav className="border-2 p-4">
       <div className="container mx-auto flex items-center justify-between">

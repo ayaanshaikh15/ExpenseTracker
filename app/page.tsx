@@ -1,8 +1,17 @@
-import { ModeToggle } from "@/components/ModeToggle";
-import Image from "next/image";
+import { checkUser } from "@/components/checkUser";
+import Dashboard from "@/components/dashboard";
+import GuestHomePage from "@/components/Guest";
+import BlurLoader from "@/components/LoadingScreen";
+import { Suspense } from "react";
 
-export default function Home() {
+export default async function Home() {
+  const user = await checkUser();
+  if(!user)
+    return <GuestHomePage/>
   return (
-   <></>
+   <>
+    <Dashboard user={user} />
+   
+   </>
   );
 }
